@@ -24,6 +24,7 @@ echo "Running certbot to generate initial signed cert"
 echo "Using server ${LETSENCRYPT_SERVER_URL}"
 
 certbot certonly --server ${LETSENCRYPT_SERVER_URL} --standalone \
+        --cert-name ${DOMAIN_FIRST} \
         --preferred-challenges http-01 $DOMAIN_ARGS \
         --email $LETSENCRYPT_EMAIL --agree-tos \
         --noninteractive --no-redirect \
